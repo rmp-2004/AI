@@ -1,0 +1,13 @@
+pip3 install SpeechRecognition
+
+python -m pip install --upgrade pip
+
+pip install SpeechRecognition gTTS transformers numpy
+
+pip install playsound==1.2.2
+
+pip install torch torchvision torchaudio
+
+pip install --upgrade transformers
+
+pip install torch transformers gTTS playsound SpeechRecognition
