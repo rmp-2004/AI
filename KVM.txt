@@ -1,0 +1,38 @@
+egrep -c '(vmx|svm)' /proc/cpuinfo
+
+//Step 2: Install KVM and Related Packages
+sudo apt update
+sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager
+
+sudo yum install -y qemu-kvm libvirt libvirt-python libguestfs-tools virt-install virt-manager
+
+//Step 3: Start and Enable the libvirtd Service
+sudo systemctl enable --now libvirtd
+
+sudo systemctl status libvirtd
+
+//Step 4: Add User to the libvirt Group
+sudo usermod -aG libvirt $USER
+newgrp libvirt
+
+// Step 5: Verify Installation
+virsh list --all
+
+//Step 6: Use Virtual Machine Manager (GUI)
+virt-manager
+
+
+
+sudo su
+
+sudo grep -c "svm\|vmx" /proc/cpuinfo
+
+cat /proc/cpuinfo
+
+sudo apt-get install qemu-kvm libvirt-bin bridge-utils virt-manager
+
+sudo adduser raitlibvirtd
+
+sudo virsh -c qemu:///system list
+
+sudo virt-manager
